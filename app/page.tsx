@@ -7,6 +7,9 @@ import Greeting from "./components/Greeting"
 
 import Counter from "./components/Counter";
 
+import Layout from "./components/Layout";
+
+
 
 /******元数据和动态元数据只能有一个 */
 //元数据
@@ -75,10 +78,21 @@ export async function generateMetadata() {
 // }
 
 //测试计时器组件- 状态组件
+// export default function Home() {
+//   return (
+//     <div>
+//       <Counter />
+//     </div>
+//   );
+// } 
+
+//测试布局组件
+
 export default function Home() {
   return (
-    <div>
-      <Counter />
-    </div>
+    <Layout>
+      <h1>欢迎来到我的网站！</h1>
+      <h2>this is a layout component</h2>
+    </Layout>
   );
-} 
+}
