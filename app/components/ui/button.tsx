@@ -12,8 +12,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 // 定义 Button 组件，接收 children、className 及其它所有按钮属性
 export function Button({ children, className, ...props }: ButtonProps) {
   return (
-    <button style={{ fontFamily: "var(--font-feeling-cute)" }}
-      className={cn(
+    <button className={cn(
         // 使用 cn 工具函数合并默认样式和外部传入的 className
        
         /***
