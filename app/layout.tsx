@@ -1,17 +1,30 @@
 import type { Metadata } from "next"; // 导入 Next.js 的 Metadata 类型，用于类型提示
 import { Geist, Geist_Mono } from "next/font/google"; // 从 next/font/google 导入 Geist 和 Geist_Mono 字体
 import "./globals.css"; // 引入全局样式
+import { Pacifico } from "next/font/google";
+
+//创建谷歌Feeling_Cute字体
+
+const feelingCute = Pacifico({
+  weight: ["400"],//字体加粗
+  subsets: ["latin"], //只加载拉丁字符集
+  display: "swap", //字体加载策略
+  variable: "--font-feeling-cute",
+})
 
 // 配置 Geist Sans 字体
 const geistSans = Geist({
   variable: "--font-geist-sans", // 设置字体变量名（注意是两个半角连字符 --）
-  subsets: ["latin"],            // 只加载 latin 字符集，减小体积
+  subsets: ["latin"],     // 只加载 latin 字符集，减小体积
+  display: "swap" , //加载策略，先用系统字体，加载完成后替换为inter，避免空白问题      
 });
 
 // 配置 Geist Mono 字体
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono", // 设置字体变量名（注意是两个半角连字符 --）
-  subsets: ["latin"],            // 只加载 latin 字符集
+  subsets: ["latin"],    
+  display: "swap" , //加载策略，先用系统字体，加载完成后替换为inter，避免空白问题      
+  // 只加载 latin 字符集
 });
 
 // 定义全局元数据（SEO用）
@@ -27,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode; // children 类型为 React 节点
 }>) {
   return (
-    <html lang="en"> {/* 设置页面语言为英文 */}
+    <html lang="en" className={feelingCute.variable}> {/* 设置页面语言为英文 */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         // 应用字体变量和抗锯齿效果
