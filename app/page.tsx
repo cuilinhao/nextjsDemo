@@ -2,6 +2,12 @@ import Image from "next/image";
 import { SignInButton } from "./components/sign-in-button";
 import { auto } from "openai/_shims/registry.mjs";
 import Hello from "./components/Hello"
+
+import Greeting from "./components/Greeting"
+
+import Counter from "./components/Counter";
+
+
 /******元数据和动态元数据只能有一个 */
 //元数据
 // export const metadata = {
@@ -50,9 +56,29 @@ export async function generateMetadata() {
 //   );
 // }
 
+// export default function Home() {
+//   //我想让hello 距离左边间距为100，背景green
+// return (<div className="ml-[100px] bg-green-500 inline-block">
+// <Hello />
+// </div>);
+// }
+
+
+//--测试使用带props的组件
+//{/* 给组件传递一个 name 属性，值是 "Alice"。 */}
+// export default function Home() {
+//   return (
+//     <div>
+//       <Greeting name="Alice" /> 
+//     </div>
+//   );
+// }
+
+//测试计时器组件- 状态组件
 export default function Home() {
-  //我想让hello 距离左边间距为100，背景green
-return (<div className="ml-[100px] bg-green-500 inline-block">
-<Hello />
-</div>);
-}
+  return (
+    <div>
+      <Counter />
+    </div>
+  );
+} 
