@@ -35,17 +35,14 @@ export const metadata: Metadata = {
 
 // 根布局组件，包裹所有页面内容
 export default function RootLayout({
-  children, // 接收所有子组件
+  children,
 }: Readonly<{
-  children: React.ReactNode; // children 类型为 React 节点
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={feelingCute.variable}> {/* 设置页面语言为英文 */}
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        // 应用字体变量和抗锯齿效果
-      >
-        {children} {/* 渲染所有子内容 */}
+    <html lang="en" className={feelingCute.className}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {children}
       </body>
     </html>
   );
